@@ -11,6 +11,7 @@ describe('Navbar E2E Tests', () => {
   it('should navigate to the products page when the "Products" link is clicked', () => {
     Navbar.visit("http://localhost:4200/products/list");
     Navbar.clickProductsLink();
+    cy.wait(1000); // Wait for the page to load
     cy.url().should('include', '/products');
   });
 
